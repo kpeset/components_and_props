@@ -1,0 +1,137 @@
+.global_rate {
+  background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+  min-height: 30rem;
+  border-radius: 0 0 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.4rem 0;
+}
+
+.global_rate > h1 {
+  color: var(--transparency-white);
+}
+
+.global_rate > .circle_rate {
+  background: linear-gradient(var(--violet-blue), var(--persian-blue));
+  height: 12rem;
+  width: 12rem;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.global_rate > .circle_rate > h2 {
+  font-size: 5rem;
+  color: var(--white);
+}
+
+.global_rate > .circle_rate > p {
+  color: var(--transparency-white);
+  font-weight: 800;
+}
+
+.result_text {
+  text-align: center;
+  width: 75%;
+}
+
+.result_text > h3 {
+  color: var(--white);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.result_text > p {
+  color: var(--transparency-white);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.details_rate,
+.nav_buttons {
+  margin: 2rem 0;
+  padding: 0 2rem;
+}
+
+.details_rate > h2 {
+  color: var(--dark-gray-blue);
+  font-weight: 800;
+}
+
+.details_rate > ul > li {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.details_rate > ul > li > div {
+  display: flex;
+}
+
+.details_rate > ul > li > div > img,
+.details_rate > ul > li > div > .note {
+  margin-right: 0.5rem;
+}
+
+.details_rate > ul > li > div > .note > p {
+  font-weight: 900;
+  color: var(--dark-gray-blue);
+}
+
+.details_rate > ul > li > div > .total > p {
+  font-weight: 900;
+  color: var(--ligth-gray);
+}
+
+.details_rate > ul > .blue {
+  background-color: var(--transparent-cobalt-blue);
+}
+
+.details_rate > ul > .red {
+  background-color: var(--transparent-light-red);
+}
+
+.details_rate > ul > .yellow {
+  background-color: var(--transparent-orangey-yellow);
+}
+
+.details_rate > ul > .green {
+  background-color: var(--transparent-green-teal);
+}
+
+.details_rate > ul > .blue > div > h3 {
+  color: var(--cobalt-blue);
+}
+
+.details_rate > ul > .red > div > h3 {
+  color: var(--light-red);
+}
+
+.details_rate > ul > .yellow > div > h3 {
+  color: var(--orangey-yellow);
+}
+
+.details_rate > ul > .green > div > h3 {
+  color: var(--green-teal);
+}
+
+.nav_buttons {
+  display: flex;
+}
+
+.nav_buttons button {
+  background-color: var(--dark-gray-blue);
+  color: var(--white);
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 300px;
+  font-size: 1.2rem;
+}

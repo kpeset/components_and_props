@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  --transparency-white: rgba(255, 255, 255, 0.517);
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+  --white: #ffffff;
+  --dark-gray-blue: hsl(224, 30%, 27%);
+  --ligth-gray: rgb(152, 152, 152);
+  --light-red: hsl(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+  --transparent-light-red: hsla(0, 100%, 67%, 0.08);
+  --transparent-orangey-yellow: hsl(39, 100%, 56%, 0.08);
+  --transparent-green-teal: hsl(166, 100%, 37%, 0.08);
+  --transparent-cobalt-blue: hsl(234, 85%, 45%, 0.08);
+}
+
+@font-face {
+  font-family: "HankenGrotesk";
+  src: url("../assets/fonts/HankenGrotesk.ttf");
+}
+
+body {
+  font-family: "HankenGrotesk", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 40px;
+}
