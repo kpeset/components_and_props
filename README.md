@@ -3,8 +3,8 @@
 ## Objectif de l'atelier
 Lors de ce small group support, nous avons vu comment créer une page et transmettre des props à des composants.
 
-## Explication du code
-### Organisation de l'application
+# Explication du code
+## Organisation de l'application
 
 Voici comment sera organisée notre application pour le moment :
 
@@ -15,7 +15,7 @@ Voici comment sera organisée notre application pour le moment :
 <br>
 <br>
 
-### Création de notre page Result
+## Création de notre page Result
 
 Notre page `Result.jsx` affichera deux composants que nous allons créer ensuite :
 - ResultDetails.jsx
@@ -65,7 +65,7 @@ export default function Result() {
 <br>
 <br>
 
-### Création de nos composants
+## Création de nos composants
 
 Maintenant il est temps d'afficher autre chose qu'un simple `Hello World`. Le composant `ResultDetails` que nous avons codé est pour le moment relativement simple :
 
@@ -150,7 +150,7 @@ La longueur de `summaryList` étant de 4, alors la boucle s'exécutera 4 fois. L
 <br>
 <br>
 
-### Utiliser des props
+## Utiliser des props
 
 Pour le moment nous n'affichons uniquement un simple `Hello World`. Il est temps d'afficher les données contenues dans `summaryList` en utilisant des props :
 
