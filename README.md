@@ -82,5 +82,12 @@ Nous modifions maintenant notre tableau d'objets de façon à ce que les notes n
   ];
 ```
 
-Nous avons donc modifier les valeur de `rate` par celle du state concerné.
+Nous avons donc modifiés les valeurs de `rate` par celles du state concerné.
+
+<br>
+<br>
+
+## Changer la valeur de nos states
+
+
 
