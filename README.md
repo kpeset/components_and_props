@@ -89,5 +89,25 @@ Nous avons donc modifiés les valeurs de `rate` par celles du state concerné.
 
 ## Changer la valeur de nos states
 
+La dernière étape consiste à remplir le formulaire avec de nos notes et de les enregistrer dans nos states.
+Pour **Reaction**, nous avons crée la fonction `handleChangeReaction` qui sera :
+
+```js
+  const handleChangeReaction = (event) => {
+    setReactionRate(event.target.value);
+  };
+```
+
+Cette fonction sera exécutée à chaque fois que la valeur de l'input change :
+
+```js
+<input type="number" onChange={handleChangeReaction} />
+```
 
 
+Lorsque l'utilisateur modifie la valeur dans cet élément, la fonction est déclenchée par l'événement `onChange`. 
+
+À l'intérieur de la fonction,` setReactionRate(event.target.value)` est appelé pour mettre à jour le state. 
+
+**Rappel:** La propriété value contient la valeur actuelle de l'élément de formulaire. `event.target.value` est la valeur actuelle de l'élément HTML (ici notre input) qui a déclenché un événement (notre changement de valeur).
+        
