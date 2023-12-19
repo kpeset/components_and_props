@@ -49,8 +49,15 @@ import Summary from "../components/Summary";
 Et maintenant nous pouvons les utiliser dans notre page `Result.jsx`
 
 ```js
+export default function Result() {
+  return (
     <>
       <ResultDetails />
       <Summary />
     </>
+  );
+}
 ```
+
+
+**Rappel:**Nous ne pouvons pas directement mettre nos deux composants à l'intérieur du `return`. En effet, dans cette situation, nous ne pouvons pas laisser deux composants sans parents. Nous avons utiliser ici des **fragments** `<> </>` mais nous aurions pu utiliser d'autres balises comme les `<div>` ou encore `<section>`.
