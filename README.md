@@ -21,6 +21,22 @@ Notre page `Result.jsx` affichera deux composants que nous allons créer ensuite
 - ResultDetails.jsx
 - Summary.jsx
 
+Pour le moment, nos deux composants vont juste afficher tous les deux un simple **"Hello World"** :
+
+```js
+// ResultDetails.jsx
+
+  export default function ResultDetails() {
+  return <h1>Hello World</h1>;
+}
+
+// Summary.jsx
+
+  export default function ResultDetails() {
+  return <h1>Hello World</h1>;
+}
+```
+
 Après les avoir crée dans notre dossier `components`, nous devons les importer dans notre `Result.jsx` :
 
 ```js
@@ -29,3 +45,12 @@ import Summary from "../components/Summary";
 ```
 
 **Rappel:** Faites bien attention aux `path` (chemin) que vous utilisez lors de vos imports.
+
+Et maintenant nous pouvons les utiliser dans notre page `Result.jsx`
+
+```js
+    <>
+      <ResultDetails />
+      <Summary />
+    </>
+```
