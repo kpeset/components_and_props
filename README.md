@@ -34,9 +34,53 @@ Il nous servira à changer la valeur des notes.
 
 ## Création de nos states
 
+Avant même de créer nos states, il est important d'importer le hook `useState` de **react** dans notre composant :
 
+```js
+import { useState } from "react";
+```
 
+Une fois fait, nous pouvons créer nos states. Dans la mesure ou nous avons 4 critères de notation (verbal, visual, memory et reaction), nous allons créer 4 états différents :
 
+```js
+  const [reactionRate, setReactionRate] = useState(0);
+  const [memoryRate, setMemoryRate] = useState(0);
+  const [verbalRate, setVerbalRate] = useState(0);
+  const [visualRate, setVisualRate] = useState(0);
+```
 
+Chaque état aura pour valeur initial 0. Ici `reactionRate` est notre state et `setReactionRate` sera la fonction à utiliser qui nous permettra de modifier la valeur de notre state.
 
+Nous modifions maintenant notre tableau d'objets de façon à ce que les notes ne soient plus en `dur`. On veut les rendre dynamiques :
+
+```js
+  const summaryList = [
+    {
+      text: "Reaction",
+      img: reaction,
+      rate: reactionRate,
+      color: "red",
+    },
+    {
+      text: "Memory",
+      img: memory,
+      rate: memoryRate,
+      color: "yellow",
+    },
+    {
+      text: "Verbal",
+      img: verbal,
+      rate: verbalRate,
+      color: "green",
+    },
+    {
+      text: "Visual",
+      img: visual,
+      rate: visualRate,
+      color: "blue",
+    },
+  ];
+```
+
+Nous avons donc modifier les valeur de `rate` par celle du state concerné.
 
