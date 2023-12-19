@@ -134,7 +134,7 @@ export default function Summary() {
     <section className="details_rate">
       <h2>Summary</h2>
       <ul>
-        {summaryList.map((summary, index) => (
+        {summaryList.map((summary) => (
           <SummaryCategory />
         ))}
       </ul>
@@ -143,3 +143,13 @@ export default function Summary() {
 }
 
 ```
+
+Ici nous utilisons une méthode de tableau `map`. Cette méthode permet de boucler sur un tableau autant de fois qu'il y a d'élément dans un tableau.
+La longueur de `summaryList` étant de 4, alors la boucle s'exécutera 4 fois. La méthode `map` 
+
+<br>
+<br>
+
+### Utiliser des props
+
+Pour le moment nous n'affichons uniquement un simple `Hello World`. Il est temps d'afficher les données contenues dans `summaryList` en utilisant des props.
