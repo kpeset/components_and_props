@@ -12,5 +12,3 @@ Chaque branche correspond à un sujet bien précis.
 - **step_02** : [**Les states**](https://github.com/kpeset/support_react/tree/step_02)
 - **step_03** : [**Optimiser ses states**](https://github.com/kpeset/support_react/tree/step_03)
 - **step_04** : [**Exercice : avoir une note moyenne**](https://github.com/kpeset/support_react/tree/step_04)
-
-
