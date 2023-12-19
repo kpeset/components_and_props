@@ -73,3 +73,40 @@ Maintenant nous devons modifier `summaryList` en conséquence :
 ```
 
 Dans la propriété `rate`, nous voulons maintenant que sa valeur soit celle qui est dans `rates` (qui je le rappelle est un objet qui a 4 propriétés - `memory`, `visual`, `verbal`, `reaction`).
+
+<br>
+<br>
+
+## Modifier les states
+
+Dans la step 2, nous avions crée une fonction pour chacun de nos états. Maintenant nous pouvons avoir une seule et même fonction. Mais d'abord nous devons légèrement modifier notre formulaire :
+
+```js
+      <form>
+        <label>Reaction</label>
+        <input name="reaction" type="number"} />
+        <label>Memory</label>
+        <input name="memory" type="number" />
+        <label>Verbal</label>
+        <input name="verbal" type="number" />
+        <label>Visual</label>
+        <input name="visual" type="number" />
+      </form>
+    </>
+```
+
+Utiliser l'attribut `name` dans le formulaire et la fonction est une technique pour gérer plusieurs champs de saisie avec une seule fonction de gestionnaire d'événements en React.
+Ainsi, chaque `input` a un attribut `name` unique qui l'identifie.
+
+Maintenant nous pouvons créer notre fonction qui permet de changer le state :
+
+```js
+  const handleChangeRates = (event) => {
+    setRates({
+      ...rates,
+      [event.target.name]: event.target.value,
+    });
+  };
+```
+
+
