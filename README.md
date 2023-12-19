@@ -61,3 +61,83 @@ export default function Result() {
 
 
 **Rappel:** Nous ne pouvons pas directement mettre nos deux composants à l'intérieur du `return`. En effet, dans cette situation, nous ne pouvons pas laisser deux composants sans parents. Nous avons utiliser ici des **fragments** `<> </>` mais nous aurions pu utiliser d'autres balises comme les `<div>` ou encore `<section>`.
+
+
+### Création de nos composants
+
+Maintenant il est temps d'afficher autre chose qu'un simple `Hello World`. Le composant `ResultDetails` que nous avons codé est pour le moment relativement simple :
+
+```js
+export default function ResultDetails() {
+  return (
+    <section className="global_rate">
+      <h1>Your Result</h1>
+      <div className="circle_rate">
+        <h2>76</h2>
+        <p>of 100</p>
+      </div>
+      <div className="result_text">
+        <h3>Great</h3>
+        <p>
+          You scored higher than 65% of the people who have taken these tests.
+        </p>
+      </div>
+    </section>
+  );
+}
+```
+
+En revanche, `SummaryCategory` se révèle un peu plus complexe. Nous ne voulions pas répéter notre code. C'est pour cette raison que nous avons crée le tableau d'objets `summaryList` :
+
+```js
+import memory from "../assets/images/icon-memory.svg";
+import reaction from "../assets/images/icon-reaction.svg";
+import verbal from "../assets/images/icon-verbal.svg";
+import visual from "../assets/images/icon-visual.svg";
+
+const summaryList = [
+  {
+    text: "Reaction",
+    img: reaction,
+    rate: "80",
+    color: "red",
+  },
+  {
+    text: "Memory",
+    img: memory,
+    rate: "92",
+    color: "yellow",
+  },
+  {
+    text: "Verbal",
+    img: verbal,
+    rate: "61",
+    color: "green",
+  },
+  {
+    text: "Visual",
+    img: visual,
+    rate: "72",
+    color: "blue",
+  },
+];
+```
+
+Et maintenant dans notre allons répéter autant de fois un composant qu'il y a d'élements dans le tableau (pensez bien à créer un composant `SummaryCategory` qui pour le moment retournera simplement un `Hello World` :
+
+```js
+
+export default function Summary() {
+  return (
+    <section className="details_rate">
+      <h2>Summary</h2>
+      <ul>
+        {summaryList.map((summary, index) => (
+          <SummaryCategory />
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+```
