@@ -1,47 +1,75 @@
-# Front-end Style Guide
+# Optimiser ses states
 
-## Layout
+## Objectif de l'atelier
+Lors de ce small group support, nous avons vu comment optimiser les states afin de rendre le code plus 'simple' et maintenable.
 
-The designs were created to the following widths:
+<br>
+<br>
 
-- Mobile: 375px
-- Desktop: 1440px
+# Explication du code
+## Refactoriser le code
 
-## Colors
+Pour le moment nous avons 4 states différents pour gérer nos notes :
 
-### Primary
+```js
+  const [reactionRate, setReactionRate] = useState(0);
+  const [memoryRate, setMemoryRate] = useState(0);
+  const [verbalRate, setVerbalRate] = useState(0);
+  const [visualRate, setVisualRate] = useState(0);
+```
 
-- Light red: hsl(0, 100%, 67%)
-- Orangey yellow: hsl(39, 100%, 56%)
-- Green teal: hsl(166, 100%, 37%)
-- Cobalt blue: hsl(234, 85%, 45%)
+Bien que ce ne soit pas vraiment la catastrophe, il est important de savoir tout mettre dans un state. 
+Pourquoi ? Imaginons que vous avez un formulaire pour créer une annonce de voiture sur un site comme **leboncoin**. Votre formulaire contiendra plusieurs champs tels que :
+- Titre de l'annonce
+- Prix
+- Kilometrage
+- Motorisation
+- Ville
+- Chevaux
+- Marque
+- Et beaucoup plus encore...
 
-## Gradients
+Vous imaginez si il faut un state pour gérer chacun de ses champs ? Et en plus il faut que chaque state utilise sa propre fonction. C'est difficilement maintenable et très peu écologique comme code.
+Nous pouvons alors mettre nos 4 states dans un un seul et même state. Ce state sera un objet qui contiendra nos différentes notes :
 
-- Light slate blue (background): hsl(252, 100%, 67%)
-- Light royal blue (background): hsl(241, 81%, 54%)
+```js
+  const [rates, setRates] = useState({
+    memory: 0,
+    reaction: 0,
+    verbal: 0,
+    visual: 0,
+  });
+```
 
-- Violet blue (circle): hsla(256, 72%, 46%, 1)
-- Persian blue (circle): hsla(241, 72%, 46%, 0)
+Maintenant nous devons modifier `summaryList` en conséquence :
 
-### Neutral
+```js
+  const summaryList = [
+    {
+      text: "Reaction",
+      img: reaction,
+      rate: rates.reaction,
+      color: "red",
+    },
+    {
+      text: "Memory",
+      img: memory,
+      rate: rates.memory,
+      color: "yellow",
+    },
+    {
+      text: "Verbal",
+      img: verbal,
+      rate: rates.verbal,
+      color: "green",
+    },
+    {
+      text: "Visual",
+      img: visual,
+      rate: rates.visual,
+      color: "blue",
+    },
+  ];
+```
 
-- White: hsl(0, 0%, 100%)
-- Pale blue: hsl(221, 100%, 96%)
-- Light lavender: hsl(241, 100%, 89%)
-- Dark gray blue: hsl(224, 30%, 27%)
-
-### Notes
-
-Use transparency to get the colour variations necessary to match the design. Hint: look into using `hsla()`.
-
-## Typography
-
-### Body Copy
-
-- Font size (paragraphs): 18px
-
-### Font
-
-- Family: [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk)
-- Weights: 500, 700, 800
+Dans la propriété `rate`, nous voulons maintenant que sa valeur soit celle qui est dans `rates` (qui je le rappelle est un objet qui a 4 propriétés - `memory`, `visual`, `verbal`, `reaction`).
