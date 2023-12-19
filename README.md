@@ -3,6 +3,9 @@
 ## Objectif de l'atelier
 Lors de ce small group support, nous avons vu comment créer une page et transmettre des props à des composants.
 
+<br>
+<br>
+
 # Explication du code
 ## Organisation de l'application
 
