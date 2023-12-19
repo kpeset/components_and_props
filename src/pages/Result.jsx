@@ -1,58 +1,52 @@
+import { useState } from "react";
+
 import SummaryCategory from "../components/SummaryCategory";
 
 import memory from "../assets/images/icon-memory.svg";
 import reaction from "../assets/images/icon-reaction.svg";
 import verbal from "../assets/images/icon-verbal.svg";
 import visual from "../assets/images/icon-visual.svg";
-import { useState } from "react";
 
 export default function Result() {
-  const [reactionRate, setReactionRate] = useState(0);
-  const [memoryRate, setMemoryRate] = useState(0);
-  const [verbalRate, setVerbalRate] = useState(0);
-  const [visualRate, setVisualRate] = useState(0);
+  const [rates, setRates] = useState({
+    memory: 72,
+    reaction: 34,
+    verbal: 13,
+    visual: 75,
+  });
 
   const summaryList = [
     {
       text: "Reaction",
       img: reaction,
-      rate: reactionRate,
+      rate: rates.reaction,
       color: "red",
     },
     {
       text: "Memory",
       img: memory,
-      rate: memoryRate,
+      rate: rates.memory,
       color: "yellow",
     },
     {
       text: "Verbal",
       img: verbal,
-      rate: verbalRate,
+      rate: rates.verbal,
       color: "green",
     },
     {
       text: "Visual",
       img: visual,
-      rate: visualRate,
+      rate: rates.visual,
       color: "blue",
     },
   ];
 
-  const handleChangeReaction = (event) => {
-    setReactionRate(event.target.value);
-  };
-
-  const handleChangeMemory = (event) => {
-    setMemoryRate(event.target.value);
-  };
-
-  const handleChangeVerbal = (event) => {
-    setVerbalRate(event.target.value);
-  };
-
-  const handleChangeVisual = (event) => {
-    setVisualRate(event.target.value);
+  const handleChangeRates = (event) => {
+    setRates({
+      ...rates,
+      [event.target.name]: event.target.value,
+    });
   };
 
   return (
@@ -80,14 +74,14 @@ export default function Result() {
       </section>
 
       <form>
-        <label htmlFor="">Reaction</label>
-        <input type="number" onChange={handleChangeReaction} />
-        <label htmlFor="">Memory</label>
-        <input type="number" onChange={handleChangeMemory} />
-        <label htmlFor="">Verbal</label>
-        <input type="number" onChange={handleChangeVerbal} />
-        <label htmlFor="">Visual</label>
-        <input type="number" onChange={handleChangeVisual} />
+        <label>Reaction</label>
+        <input name="reaction" type="number" onChange={handleChangeRates} />
+        <label>Memory</label>
+        <input name="memory" type="number" onChange={handleChangeRates} />
+        <label>Verbal</label>
+        <input name="verbal" type="number" onChange={handleChangeRates} />
+        <label>Visual</label>
+        <input name="visual" type="number" onChange={handleChangeRates} />
       </form>
     </>
   );
