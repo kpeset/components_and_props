@@ -28,4 +28,4 @@ import ResultDetails from "../components/ResultDetails";
 import Summary from "../components/Summary";
 ```
 
-**Rappel : ** Faites bien attention aux `path` (chemin) que vous utilisez lors de vos imports.
+**Rappel:** Faites bien attention aux `path` (chemin) que vous utilisez lors de vos imports.
