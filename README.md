@@ -8,9 +8,9 @@ Lors de ce small group support, nous avons vu comment créer une page et transme
 
 Voici comment sera organisée notre application pour le moment :
 
-- main.jxs : Fichier parent de notre application, là où nous importons et utilisons `App.jsx` et nos différents fichiers **CSS**
-- App.jsx : Ce composant affichera notre composant `Result.jsx`. 
-- Result.jsx : Composant dans lequel nous allons afficher les deux composants enfants (note & summary)
+- **main.jxs** : Fichier parent de notre application, là où nous importons et utilisons `App.jsx` et nos différents fichiers **CSS**
+- **App.jsx** : Ce composant affichera notre composant `Result.jsx`. 
+- **Result.jsx** : Composant dans lequel nous allons afficher les deux composants enfants (note & summary)
 
 <br>
 <br>
