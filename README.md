@@ -1,47 +1,31 @@
-# Front-end Style Guide
+# Composants et props
 
-## Layout
+## Objectif de l'atelier
+Lors de ce small group support, nous avons vu comment créer une page et transmettre des props à des composants.
 
-The designs were created to the following widths:
+## Explication du code
+### Organisation de l'application
 
-- Mobile: 375px
-- Desktop: 1440px
+Voici comment sera organisée notre application pour le moment :
 
-## Colors
+- main.jxs : Fichier parent de notre application, là où nous importons et utilisons `App.jsx` et nos différents fichiers **CSS**
+- App.jsx : Ce composant affichera notre composant `Result.jsx`. 
+- Result.jsx : Composant dans lequel nous allons afficher les deux composants enfants (note & summary)
 
-### Primary
+<br>
+<br>
 
-- Light red: hsl(0, 100%, 67%)
-- Orangey yellow: hsl(39, 100%, 56%)
-- Green teal: hsl(166, 100%, 37%)
-- Cobalt blue: hsl(234, 85%, 45%)
+### Création de notre page Result
 
-## Gradients
+Notre page `Result.jsx` affichera deux composants que nous allons créer ensuite :
+- ResultDetails.jsx
+- Summary.jsx
 
-- Light slate blue (background): hsl(252, 100%, 67%)
-- Light royal blue (background): hsl(241, 81%, 54%)
+Après les avoir crée dans notre dossier `components`, nous devons les importer dans notre `Result.jsx` :
 
-- Violet blue (circle): hsla(256, 72%, 46%, 1)
-- Persian blue (circle): hsla(241, 72%, 46%, 0)
+```js
+import ResultDetails from "../components/ResultDetails";
+import Summary from "../components/Summary";
+```
 
-### Neutral
-
-- White: hsl(0, 0%, 100%)
-- Pale blue: hsl(221, 100%, 96%)
-- Light lavender: hsl(241, 100%, 89%)
-- Dark gray blue: hsl(224, 30%, 27%)
-
-### Notes
-
-Use transparency to get the colour variations necessary to match the design. Hint: look into using `hsla()`.
-
-## Typography
-
-### Body Copy
-
-- Font size (paragraphs): 18px
-
-### Font
-
-- Family: [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk)
-- Weights: 500, 700, 800
+**Rappel : ** Faites bien attention aux `path` (chemin) que vous utilisez lors de vos imports.
