@@ -152,4 +152,67 @@ La longueur de `summaryList` étant de 4, alors la boucle s'exécutera 4 fois. L
 
 ### Utiliser des props
 
-Pour le moment nous n'affichons uniquement un simple `Hello World`. Il est temps d'afficher les données contenues dans `summaryList` en utilisant des props.
+Pour le moment nous n'affichons uniquement un simple `Hello World`. Il est temps d'afficher les données contenues dans `summaryList` en utilisant des props :
+
+```js
+export default function Summary() {
+  return (
+    <section className="details_rate">
+      <h2>Summary</h2>
+      <ul>
+        {summaryList.map((summary, index) => (
+          <SummaryCategory settings={summary} />
+        ))}
+      </ul>
+    </section>
+  );
+}
+```
+
+Pour chaque `SummaryCategory` créé, une prop nommée `settings` est passée, qui contient les données de l'élément actuel de `summaryList` (référencé par `summary` dans la fonction map). 
+
+Ainsi, chaque `SummaryCategory` reçoit des données spécifiques de `summaryList` comme propriété (`prop`), permettant de personnaliser son contenu.
+
+Il ne nous reste plus qu'à utiliser les props reçues dans le composant `SummaryCategory` :
+
+```js
+export default function SummaryCategory({ settings }) {
+  return (
+    <li className={settings.color}>
+      <div>
+        <img alt="reaction" src={settings.img} />
+        <h3>{settings.text}</h3>
+      </div>
+      <div>
+        <div className="note">
+          <p>{settings.rate}</p>
+        </div>
+        <div className="total">
+          <p>/ 100</p>
+        </div>
+      </div>
+    </li>
+  );
+}
+```
+
+Notre composant fonctionnel `SummaryCategory` reçoit en paramètres nos props `settings` :
+ ```js
+export default function SummaryCategory({ settings }) {
+```
+
+`settings` étant un objet, il ne nous reste plus qu'à afficher les valeurs des propriétés souhaitées :
+
+```js
+      <div>
+        <img alt="reaction" src={settings.img} />
+        <h3>{settings.text}</h3>
+      </div>
+```
+
+**Attention :** Si vous regardez votre console **chrome** vous verrez des erreurs en rouge 😁 Est-ce que ça a un rapport avec les `khey` lorsque nous utilisons la méthode `map` ?
+
+
+
+
+
