@@ -112,3 +112,9 @@ Maintenant nous pouvons créer notre fonction qui permet de changer le state :
 La fonction utilise `setRates` pour mettre à jour l'état `rates`.
 On utilise sur `rates` l'opérateur de propagation (`...rates`) pour conserver les valeurs existantes.
 Ensuite, la fonction met à jour la valeur spécifiée par `event.target.name` avec la nouvelle valeur entrée, qui est `event.target.value`.
+
+**Attention:** N'oubliez pas d'exécuter la fonction à chaque fois que la valeur d'un `input` change : 
+
+```js
+        <input name="memory" type="number" onChange={handleChangeRates} />
+```
